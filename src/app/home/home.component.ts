@@ -13,6 +13,10 @@ export class HomeComponent implements OnInit {
 
   onLoadServers() {
     // complex calc
-    this.router.navigate(["/servers"]);
+    let id = 1;
+    this.router.navigate(["/servers", id, "edit"], {
+      queryParams: { allowEdit: "1" },
+      fragment: "loading",
+    });
   }
 }
